@@ -1,23 +1,24 @@
 class_name HealthComponent
 extends Node
 
-@export var _max_health: int = 10
+@export var max_health: int = 10
 
-@export var _health: int:
+var _health: int:
 	set(new_health):
 		_health = new_health
 		if _health <= 0:
 			death()
-		elif _health > _max_health:
-			_health = _max_health
+		elif _health > max_health:
+			_health = max_health
 
 func _ready():
-	_health = _max_health
+	_health = max_health
 
+# TODO: Play defined damage animation
 func take_damage(dmg: int):
 	_health -= dmg
 
-# TODO: play a defined death animation, likely export animation
+# TODO: play a defined death animation
 func death():
 	pass
 

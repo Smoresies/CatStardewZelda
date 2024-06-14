@@ -27,7 +27,7 @@ func _input(event):
 		sword_collision.disabled = !sword_collision.disabled
 
 # Where all movement/collision/physics are handled each frame.
-func _physics_process(delta):	
+func _physics_process(_delta):	
 	var direction := get_movement()
 	if direction:
 		velocity = direction * speed

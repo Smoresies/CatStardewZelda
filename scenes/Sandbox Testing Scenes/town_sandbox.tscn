@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://syukg5mvrtsr"]
+
+[ext_resource type="PackedScene" uid="uid://cqehsm0a23xqt" path="res://scenes/Sandbox Testing Scenes/alex_player.tscn" id="1_1cjyf"]
+[ext_resource type="PackedScene" uid="uid://bq48sgamwqnqj" path="res://scenes/interactable.tscn" id="2_50dvn"]
+
+[node name="Town_Sandbox" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_1cjyf")]
+
+[node name="Child Fae" parent="." instance=ExtResource("2_50dvn")]
+position = Vector2(281, 306)
+
+[node name="Pixie \'Dust\' Dealer" parent="." instance=ExtResource("2_50dvn")]
+position = Vector2(478, 145)
+type = 1
+
+[node name="Chest" parent="." instance=ExtResource("2_50dvn")]
+position = Vector2(708, 334)
+type = 2

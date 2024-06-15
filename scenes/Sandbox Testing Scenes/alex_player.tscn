@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://cqehsm0a23xqt"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_6coqr"]
+[ext_resource type="Texture2D" uid="uid://b2axlkdepbljf" path="res://assets/playerTemp.png" id="2_kfm0e"]
+[ext_resource type="PackedScene" uid="uid://c535qa76dehre" path="res://scenes/interaction.tscn" id="3_fegon"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wbtm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kfm0e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yaa32"]
+radius = 16.0312
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugkbr"]
+size = Vector2(25, 32)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_6coqr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wbtm4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yaa32")
+
+[node name="Sword" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
+position = Vector2(29.5, 0)
+shape = SubResource("RectangleShape2D_ugkbr")
+disabled = true
+
+[node name="Interaction" parent="." instance=ExtResource("3_fegon")]

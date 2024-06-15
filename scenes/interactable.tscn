@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq48sgamwqnqj"]
+
+[ext_resource type="Script" path="res://scripts/interactable.gd" id="1_20d7k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4brun"]
+
+[node name="Interactable" type="Area2D"]
+collision_layer = 2
+collision_mask = 16
+script = ExtResource("1_20d7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4brun")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

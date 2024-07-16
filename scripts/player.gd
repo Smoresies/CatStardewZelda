@@ -4,7 +4,6 @@ extends CharacterBody2D
 @export var speed = 300.0
 
 @onready var sword = $Sword
-@onready var sword_collision = $Sword/CollisionShape2D
 
 var last_direction: Vector2
 

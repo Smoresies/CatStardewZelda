@@ -20,7 +20,7 @@ func take_damage(dmg: int):
 
 # TODO: play a defined death animation
 func death():
-	pass
+	print($"..".name + "has Died!")
 
 func _enter_tree() -> void:
 	owner.set_meta(Components.Health, self) # Register

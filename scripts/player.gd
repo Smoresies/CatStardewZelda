@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var sword = $Sword
 @onready var sword_collision = $Sword/CollisionShape2D
 
+var last_direction: Vector2
+
 
 # Get basic movement input, makes _physics_process less cluttered.
 func get_movement() -> Vector2:
@@ -14,24 +16,25 @@ func get_movement() -> Vector2:
 # eventually use this to set animations
 func check_direction(dir: Vector2):
 	if dir.x > 0:
-		pass
+		return Vector2.RIGHT
 	elif dir.y > 0:
-		pass
+		return Vector2.DOWN
 	elif dir.x < 0:
-		pass
+		return Vector2.LEFT
 	elif dir.y < 0:
-		pass
+		return Vector2.UP
 
 func _input(event):
 	if event.is_action_pressed("attack"):
-		sword_collision.disabled = !sword_collision.disabled
+		sword.attack()
+		# sword_collision.disabled = !sword_collision.disabled
 
 # Where all movement/collision/physics are handled each frame.
 func _physics_process(_delta):	
 	var direction := get_movement()
 	if direction:
 		velocity = direction * speed
-		check_direction(direction)
+		last_direction = check_direction(direction)
 		# velocity = velocity.move_toward(target_velocity, acceleration * delta)
 	else:
 		velocity = Vector2.ZERO

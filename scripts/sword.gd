@@ -18,6 +18,5 @@ func attack():
 func _on_body_entered(body):
 	var hComp: HealthComponent = body.get_meta(Components.Health)
 	if hComp != null:
-		print(body.name)
 		hComp.take_damage(damage)
 		

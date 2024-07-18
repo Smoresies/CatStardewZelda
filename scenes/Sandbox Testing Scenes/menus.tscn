@@ -1,0 +1,292 @@
+[gd_scene load_steps=21 format=3 uid="uid://0x0kp5m6dvbb"]
+
+[ext_resource type="Script" path="res://scripts/UI Scripts/menus.gd" id="1_8e1pn"]
+[ext_resource type="Script" path="res://scripts/UI Scripts/ui_manager.gd" id="1_g20bn"]
+[ext_resource type="Script" path="res://scripts/UI Scripts/plant_crop.gd" id="2_44pwr"]
+[ext_resource type="Script" path="res://scripts/UI Scripts/make_potion.gd" id="4_3br73"]
+[ext_resource type="Script" path="res://scripts/Inventory Scripts/item.gd" id="5_2d3wd"]
+[ext_resource type="Texture2D" uid="uid://c25e0y8kuhn0w" path="res://scenes/Sandbox Testing Scenes/Test Cursor.png" id="6_7d8y8"]
+[ext_resource type="Script" path="res://scripts/UI Scripts/test_cursor.gd" id="7_atkpl"]
+[ext_resource type="Script" path="res://scripts/UI Scripts/harvest.gd" id="8_kjuo8"]
+
+[sub_resource type="Resource" id="Resource_n6u4j"]
+script = ExtResource("5_2d3wd")
+type = "Small Health Potion"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_vmr6s"]
+script = ExtResource("5_2d3wd")
+type = "Heartfelt Shroom"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_lwson"]
+script = ExtResource("5_2d3wd")
+type = "Miniature Flower"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_rw57m"]
+script = ExtResource("5_2d3wd")
+type = "Small Mana Potion"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_yq6t2"]
+script = ExtResource("5_2d3wd")
+type = "Headstrong Shroom"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_o4cxw"]
+script = ExtResource("5_2d3wd")
+type = "Miniature Flower"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_bx0i5"]
+script = ExtResource("5_2d3wd")
+type = "Red Seeds"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_5bl5v"]
+script = ExtResource("5_2d3wd")
+type = "Heartfelt Shroom"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_u8dkq"]
+script = ExtResource("5_2d3wd")
+type = "Blue Seeds"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_742g2"]
+script = ExtResource("5_2d3wd")
+type = "Headstrong Shroom"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_etqss"]
+script = ExtResource("5_2d3wd")
+type = "Teal Seeds"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_uwqgn"]
+script = ExtResource("5_2d3wd")
+type = "Miniature Flower"
+amount = 1
+
+[node name="UI" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_g20bn")
+
+[node name="Potion Menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 823.0
+offset_top = -1.0
+offset_right = 1166.0
+offset_bottom = 166.0
+script = ExtResource("1_8e1pn")
+
+[node name="ColorRect" type="ColorRect" parent="Potion Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.206215
+anchor_right = 0.958
+anchor_bottom = 0.644068
+offset_left = -12.2684
+offset_right = -0.594025
+offset_bottom = 0.44062
+color = Color(0.517184, 0.517184, 0.517184, 1)
+
+[node name="Potions" type="VBoxContainer" parent="Potion Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0706215
+anchor_top = 0.0169492
+anchor_right = 0.31087
+anchor_bottom = 0.660893
+offset_right = -0.0480042
+offset_bottom = 0.0219727
+
+[node name="Option 1" type="Label" parent="Potion Menu/Potions"]
+layout_mode = 2
+text = "Small Health
+Potion"
+horizontal_alignment = 1
+script = ExtResource("4_3br73")
+potion = SubResource("Resource_n6u4j")
+ingredient_one = SubResource("Resource_vmr6s")
+ingredient_two = SubResource("Resource_lwson")
+
+[node name="Option 2" type="Label" parent="Potion Menu/Potions"]
+layout_mode = 2
+text = "Small Mana
+Potion"
+horizontal_alignment = 1
+script = ExtResource("4_3br73")
+potion = SubResource("Resource_rw57m")
+ingredient_one = SubResource("Resource_yq6t2")
+ingredient_two = SubResource("Resource_o4cxw")
+
+[node name="Result 1" type="Label" parent="Potion Menu"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 2.0
+offset_right = 338.0
+offset_bottom = 51.0
+text = "Heartfelt Shroom & 
+Miniature Flower"
+horizontal_alignment = 1
+
+[node name="Result 2" type="Label" parent="Potion Menu"]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 57.0
+offset_right = 338.0
+offset_bottom = 106.0
+text = "Headstrong Shroom & 
+Miniature Flower"
+horizontal_alignment = 1
+
+[node name="TestCursor" type="TextureRect" parent="Potion Menu"]
+layout_mode = 0
+offset_left = -72.0
+offset_top = 1.0
+offset_right = -32.0
+offset_bottom = 41.0
+texture = ExtResource("6_7d8y8")
+script = ExtResource("7_atkpl")
+menu_path = NodePath("../Potions")
+cursor_offset = Vector2(-20, -2)
+
+[node name="Plant Menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 878.0
+offset_top = -1.0
+offset_right = 1199.0
+offset_bottom = 368.0
+script = ExtResource("1_8e1pn")
+
+[node name="ColorRect" type="ColorRect" parent="Plant Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.206215
+anchor_right = 0.958
+anchor_bottom = 0.644068
+offset_left = 216.195
+offset_top = 2.0
+offset_right = -32.518
+offset_bottom = -152.661
+color = Color(0.517184, 0.517184, 0.517184, 1)
+
+[node name="Potions" type="VBoxContainer" parent="Plant Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0706215
+anchor_top = 0.0169492
+anchor_right = 0.31087
+anchor_bottom = 0.660893
+offset_left = 199.669
+offset_top = -2.25424
+offset_right = 176.211
+offset_bottom = 7.13057
+
+[node name="Option 1" type="Label" parent="Plant Menu/Potions"]
+layout_mode = 2
+text = "Red Seeds"
+horizontal_alignment = 1
+script = ExtResource("2_44pwr")
+seed_required = SubResource("Resource_bx0i5")
+crop_given = SubResource("Resource_5bl5v")
+
+[node name="Option 2" type="Label" parent="Plant Menu/Potions"]
+layout_mode = 2
+text = "Blue Seeds"
+horizontal_alignment = 1
+script = ExtResource("2_44pwr")
+seed_required = SubResource("Resource_u8dkq")
+crop_given = SubResource("Resource_742g2")
+value = 1
+
+[node name="Option 3" type="Label" parent="Plant Menu/Potions"]
+layout_mode = 2
+text = "Teal Seeds"
+horizontal_alignment = 1
+script = ExtResource("2_44pwr")
+seed_required = SubResource("Resource_etqss")
+crop_given = SubResource("Resource_uwqgn")
+value = 2
+
+[node name="TestCursor" type="TextureRect" parent="Plant Menu"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 5.0
+offset_right = 182.0
+offset_bottom = 29.0
+texture = ExtResource("6_7d8y8")
+script = ExtResource("7_atkpl")
+menu_path = NodePath("../Potions")
+cursor_offset = Vector2(-25, -2)
+
+[node name="Harvest Menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 851.0
+offset_right = 1197.0
+offset_bottom = 367.0
+script = ExtResource("1_8e1pn")
+
+[node name="ColorRect" type="ColorRect" parent="Harvest Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.206215
+anchor_right = 0.958
+anchor_bottom = 0.644068
+offset_left = 216.35
+offset_top = 2.0
+offset_right = -32.468
+offset_bottom = -176.373
+color = Color(0.517184, 0.517184, 0.517184, 1)
+
+[node name="Potions" type="VBoxContainer" parent="Harvest Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0706215
+anchor_top = 0.0169492
+anchor_right = 0.31087
+anchor_bottom = 0.660893
+offset_left = 199.669
+offset_top = -2.25424
+offset_right = 176.211
+offset_bottom = 7.13057
+
+[node name="Option 1" type="Label" parent="Harvest Menu/Potions"]
+layout_mode = 2
+text = "Harvest"
+horizontal_alignment = 1
+script = ExtResource("8_kjuo8")
+
+[node name="Option 2" type="Label" parent="Harvest Menu/Potions"]
+layout_mode = 2
+text = "Compost"
+horizontal_alignment = 1
+script = ExtResource("8_kjuo8")
+value = 1
+
+[node name="TestCursor" type="TextureRect" parent="Harvest Menu"]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 5.0
+offset_right = 179.0
+offset_bottom = 27.0
+texture = ExtResource("6_7d8y8")
+script = ExtResource("7_atkpl")
+menu_path = NodePath("../Potions")
+cursor_offset = Vector2(-45, -2)
+
+[connection signal="success" from="Potion Menu/Potions/Option 1" to="." method="_success"]
+[connection signal="success" from="Potion Menu/Potions/Option 2" to="." method="_success"]
+[connection signal="selected" from="Plant Menu/Potions/Option 1" to="." method="_on_selected"]
+[connection signal="selected" from="Plant Menu/Potions/Option 2" to="." method="_on_selected"]
+[connection signal="selected" from="Plant Menu/Potions/Option 3" to="." method="_on_selected"]
+[connection signal="selected" from="Harvest Menu/Potions/Option 1" to="." method="_on_harvest"]
+[connection signal="selected" from="Harvest Menu/Potions/Option 2" to="." method="_on_harvest"]

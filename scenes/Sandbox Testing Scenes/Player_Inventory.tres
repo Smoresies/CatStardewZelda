@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="Player_Inventory" load_steps=9 format=3 uid="uid://bh0qsj5pq0wr"]
+
+[ext_resource type="Script" path="res://scripts/Inventory Scripts/item.gd" id="1_nq011"]
+[ext_resource type="Script" path="res://scripts/Inventory Scripts/player_inv.gd" id="2_2bst8"]
+
+[sub_resource type="Resource" id="Resource_f5pj8"]
+script = ExtResource("1_nq011")
+type = "Heartfelt Shroom"
+amount = 0
+
+[sub_resource type="Resource" id="Resource_g80es"]
+script = ExtResource("1_nq011")
+type = "Headstrong Shroom"
+amount = 0
+
+[sub_resource type="Resource" id="Resource_lowmo"]
+script = ExtResource("1_nq011")
+type = "Miniature Flower"
+amount = 0
+
+[sub_resource type="Resource" id="Resource_pjewa"]
+script = ExtResource("1_nq011")
+type = "Red Seeds"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_bij50"]
+script = ExtResource("1_nq011")
+type = "Blue Seeds"
+amount = 1
+
+[sub_resource type="Resource" id="Resource_hh4xm"]
+script = ExtResource("1_nq011")
+type = "Teal Seeds"
+amount = 1
+
+[resource]
+script = ExtResource("2_2bst8")
+plants = Array[ExtResource("1_nq011")]([SubResource("Resource_f5pj8"), SubResource("Resource_g80es"), SubResource("Resource_lowmo")])
+seeds = Array[ExtResource("1_nq011")]([SubResource("Resource_pjewa"), SubResource("Resource_bij50"), SubResource("Resource_hh4xm")])
+consumables = Array[ExtResource("1_nq011")]([])

@@ -1,37 +1,35 @@
 [gd_scene load_steps=6 format=3 uid="uid://feqh8g2k1624"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_3s3nb"]
-[ext_resource type="Texture2D" uid="uid://b2axlkdepbljf" path="res://assets/playerTemp.png" id="1_br0i2"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wbtm4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_br0i2")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://c33iv1ix1ky0u" path="res://assets/genericTemp.png" id="2_87xg5"]
+[ext_resource type="Script" path="res://scripts/sword.gd" id="3_7xlle"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yaa32"]
-radius = 16.0312
+radius = 16.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugkbr"]
-size = Vector2(25, 32)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfdhb"]
+size = Vector2(20, 29)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 7
 script = ExtResource("1_3s3nb")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_wbtm4")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0470588, 0, 1, 1)
+texture = ExtResource("2_87xg5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_yaa32")
 
 [node name="Sword" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("3_7xlle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
-position = Vector2(29.5, 0)
-shape = SubResource("RectangleShape2D_ugkbr")
+shape = SubResource("RectangleShape2D_qfdhb")
 disabled = true
+
+[connection signal="area_entered" from="Sword" to="Sword" method="_on_area_entered"]
+[connection signal="body_entered" from="Sword" to="Sword" method="_on_body_entered"]

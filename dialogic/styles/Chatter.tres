@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=5 format=3 uid="uid://bbstkdvl2bn2r"]
+
+[ext_resource type="PackedScene" uid="uid://dd028ym8oy60k" path="res://dialogic/styles/TextboxWithPortrait/custom_textbox_with_speaker_portrait.tscn" id="1_poitm"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="1_u0mxt"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_upcah"]
+
+[sub_resource type="Resource" id="Resource_vu4kq"]
+script = ExtResource("2_upcah")
+scene = ExtResource("1_poitm")
+overrides = {
+"box_distance": "10.0",
+"box_size": "Vector2(450, 100)",
+"name_label_alignment": "1",
+"name_label_custom_size": "12.0",
+"name_label_use_global_size": "false",
+"text_custom_size": "12.0",
+"text_use_global_size": "false"
+}
+
+[resource]
+script = ExtResource("1_u0mxt")
+name = "Chatter"
+base_overrides = {}
+layers = Array[ExtResource("2_upcah")]([SubResource("Resource_vu4kq")])
+metadata/_latest_layer = 0

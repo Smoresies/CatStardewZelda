@@ -1,0 +1,47 @@
+Pixie: Hey get up!
+Pixie: Are you... still alive?
+Pixie: Did I get the spell wrong? I'm pretty sure-
+Your eyes flutter open. Dappled sunlight streams down, mostly obscured by the massive trees overhead. In front of you is a small person, fluttering in midair on gossamer wings.
+According to all known laws of aviation, there is no way that this person should be able to fly. Its wings are too small. And yet, somehow they do...
+Player: ...
+Pixie: Oh hey, you finally woke up!!
+Pixie: I definitely didn't have any doubts that you would!
+Pixie: Now get up, you've got a lot of work ahead of you!
+- Agree
+	You open your mouth to voice your excitement at the prospect of waking up in a mysterious place and being coerced into work, but nothing comes out.
+	You hop up to your feet though, ever the people pleaser.
+	Pixie: Wow, clearly somebody's eager to be the destined hero of the Feywild! I thought I'd have to convince you more, but I guess we're already on the same page! Let's get started, follow me!
+	[end_timeline]
+- Question
+	You open your mouth to ask what the little flying person is talking about, but nothing comes out.
+	You settle for giving the stranger a dubious frown and a curious eyebrow tilt.
+	Pixie: Oh right! I guess I didn't say... you're the destined hero of the Feywild! Pretty cool, huh? You're the one that'll save all of us! But time is of the essence, so we gotta get started!
+	- Get up
+		You reluctantly stand up. The Pixie's face brightens with a goofy grin
+		Pixie: Aww, I knew you couldn't say no forever! Let's get started, follow me!
+		[end_timeline]
+	- Refuse
+		As you sit unmoving, the small person starts to pout, like a puppy begging for a treat.
+		jump Pouting
+	[end_timeline]
+- Refuse
+	You open your mouth to object to being bossed around, but nothing comes out.
+	You make no moves to get up, and instead cross your legs and scowl at the stranger.
+	Pixie: Hey, what's that look about? You're the destined hero of the Feywild! Surely you wouldn't abandon us in our hour of need?
+	They give a pathetic pout.
+	- Acquiesce
+		You reluctantly stand up. The Pixie's face brightens with a goofy grin
+		Pixie: Aww, I knew you couldn't say no forever! Let's get started, follow me!
+		[end_timeline]
+	- Refuse
+		jump Pouting
+label Pouting
+Player: ...
+You don't make any moves to comply with the stranger's requests, and they continue to pout.
+Pixie: <C'mon, we need you!/I promise it'll be fun!/Don't you wanna go on a magical adventure?/Why are you so stubborn?/I bet you'll be rewarded handsomely if you save the Feywild!>
+- Acquiesce
+	You reluctantly stand up. The Pixie's face brightens with a goofy grin
+	Pixie: Aww, I knew you couldn't say no forever! Let's get started, follow me!
+	[end_timeline]
+- Refuse
+	jump Pouting
